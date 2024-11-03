@@ -1,0 +1,62 @@
+export const packages = [
+  {
+    title: 'Kedarnath Tour Package from Nagpur',
+    nights: 7,
+    days: 8,
+    image: 'https://images.pexels.com/photos/15031440/pexels-photo-15031440/free-photo-of-a-crowd-standing-in-front-of-the-kedarnath-temple-in-kedarnath-india-during-a-ceremony.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    discountedPrice:15000,
+    originalPrice:18000,
+    inclusions: [
+      { text: 'Departure from Nagpur by Car/Tempo Traveller' },
+      { text: 'Accomodation on Twin sharing basis' },
+      { text: 'Meal Plan: Breakfast and Dinner at Hotel' },
+      { text: 'Assistance on Arrival' },
+      { text: 'All transfers, excursions, sightseeings as per itinerary' },
+      {
+        text: 'Parking, driver allowance, all expenses related to transport included',
+      },
+      { text: 'All Transport & Hotels Related Taxes.' },
+    ],
+    phoneNumber: '+91 9999233932',
+  },
+  {
+    title: 'Kedarnath Tour Package from Nagpur',
+    nights: 7,
+    days: 8,
+    image: 'https://images.pexels.com/photos/15031440/pexels-photo-15031440/free-photo-of-a-crowd-standing-in-front-of-the-kedarnath-temple-in-kedarnath-india-during-a-ceremony.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    discountedPrice:15000,
+    originalPrice:18000,
+    inclusions: [
+      { text: 'Departure from Nagpur by Car/Tempo Traveller' },
+      { text: 'Accomodation on Twin sharing basis' },
+      { text: 'Meal Plan: Breakfast and Dinner at Hotel' },
+      { text: 'Assistance on Arrival' },
+      { text: 'All transfers, excursions, sightseeings as per itinerary' },
+      {
+        text: 'Parking, driver allowance, all expenses related to transport included',
+      },
+      { text: 'All Transport & Hotels Related Taxes.' },
+    ],
+    phoneNumber: '+91 9999233932',
+  },
+  {
+    title: 'Kedarnath Tour Package from Nagpur',
+    nights: 7,
+    days: 8,
+    image: 'https://images.pexels.com/photos/15031440/pexels-photo-15031440/free-photo-of-a-crowd-standing-in-front-of-the-kedarnath-temple-in-kedarnath-india-during-a-ceremony.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    discountedPrice:15000,
+    originalPrice:18000,
+    inclusions: [
+      { text: 'Departure from Nagpur by Car/Tempo Traveller' },
+      { text: 'Accomodation on Twin sharing basis' },
+      { text: 'Meal Plan: Breakfast and Dinner at Hotel' },
+      { text: 'Assistance on Arrival' },
+      { text: 'All transfers, excursions, sightseeings as per itinerary' },
+      {
+        text: 'Parking, driver allowance, all expenses related to transport included',
+      },
+      { text: 'All Transport & Hotels Related Taxes.' },
+    ],
+    phoneNumber: '+91 9999233932',
+  },
+];
