@@ -65,7 +65,7 @@ export default function page() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 py-16">
+      <section className="max-w-7xl mx-auto px-4 py-8">
         <h2 className="text-3xl font-bold text-center mb-4">Book Beautiful Kedarnath Tour Packages</h2>
         <p className="text-center mb-8">Explore the divine beauty of Kedarnath with our exclusive tour package...</p>
         <div className="space-y-8">
@@ -78,7 +78,7 @@ export default function page() {
       <section className="w-full">
         <div className="relative h-[500px] bg-cover bg-center flex flex-col items-center justify-center text-white p-4 overflow-hidden" style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/14208440/pexels-photo-14208440.png')" }}>
           <h1 className="text-4xl md:text-6xl font-bold text-center mb-8 drop-shadow-lg">Still Confused? to Choose Kedarnath Packages</h1>
-          <DialogueButton text="CLICK HERE & LET US KNOW YOUR REQUIREMENT" css="bg-teal-500 hover:bg-teal-600 text-white text-lg px-8 py-4 md:py-6 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105" />
+          <DialogueButton text="CLICK HERE & LET US KNOW YOUR REQUIREMENT" css="bg-teal-500 hover:bg-teal-600 text-white text-lg px-8 py-4 md:py-6 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 text-wrap max-md:py-12" />
         </div>
 
         <div className="hidden md:block max-w-7xl mx-auto px-4 py-20">

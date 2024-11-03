@@ -19,7 +19,7 @@ export default function QueryForm() {
       <CardContent className="p-6">
         <div className="grid lg:grid-cols-2 gap-6">
           {/* How It Works Section */}
-          <div className="space-y-6">
+          <div className="hidden md:block space-y-6">
             <h2 className="text-2xl font-semibold text-teal-600">
               How It Works
             </h2>

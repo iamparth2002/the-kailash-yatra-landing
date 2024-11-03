@@ -74,11 +74,11 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="border-t border-teal-100 mt-8 max-w-7xl mx-auto">
-        <div className="container flex justify-between mx-auto px-4 py-4">
+        <div className="container gap-2 md:flex justify-between mx-auto px-4 py-4">
           <p className="text-center text-white text-sm">
             © 2023 The Kailash yatra. All Rights Reserved.
           </p>
-          <p className="text-center text-white text-sm">
+          <p className="text-center text-white text-sm max-md:mt-2">
             Created By @Parth Gandhi
            </p>
         </div>
