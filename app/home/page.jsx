@@ -31,8 +31,8 @@ import DialogueButton from '@/components/custom/DialogueButton';
 export default function page() {
   return (
     <div className="bg-gray-100 min-h-screen">
-      <div className="bg-teal-500 text-white text-center py-2 text-sm font-medium">
-        <div className="max-w-7xl flex justify-between mx-auto px-4">
+      <div className="hidden md:block bg-teal-500 text-white text-center py-2 text-sm font-medium">
+        <div className="flex max-w-7xl justify-between mx-auto px-4">
           <div className="flex gap-2">
             <div className="flex gap-2 items-center">
               <Mail className="h-4 w-4" />
@@ -51,7 +51,7 @@ export default function page() {
       <section className="bg-gray-900 text-white bg-cover bg-center" style={{ backgroundImage: "url('https://images.pexels.com/photos/15031440/pexels-photo-15031440/free-photo-of-a-crowd-standing-in-front-of-the-kedarnath-temple-in-kedarnath-india-during-a-ceremony.jpeg')" }}>
         <div className="backdrop-brightness-50 mx-auto">
           <div className="max-w-7xl mx-auto py-16 px-4 flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 mb-8 md:mb-0">
+            <div className="max-md:text-center md:w-1/2 mb-8 md:mb-0">
               <h2 className="text-4xl md:text-7xl font-bold mb-4">KEDARNATH</h2>
               <p className="text-2xl mb-8">Tour Packages <span className="bg-teal-600 text-white p-2 rounded-full">3N/4D</span></p>
               <p className="inline-flex gap-2 items-center text-2xl mb-8 bg-white text-black p-4 rounded-full">
