@@ -2,10 +2,12 @@ import Link from "next/link";
 import { Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Logo from "./Logo";
+import { contactData } from "@/utils/data";
+import { formatPhoneNumber } from "@/utils/functions";
 
 export default function Footer() {
   return (
-    <footer className="bg-teal-900 text-white">
+    <footer className="bg-teal-900 text-white mt-12">
       <div className="container mx-auto px-4 py-12 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Company Info Card */}
@@ -16,19 +18,14 @@ export default function Footer() {
                 Trusted in over 100 countries with 5 million customers. Have any queries? Contact us, we’re here to help.
               </p>
               <div className="flex space-x-4">
-                {[
-                  { icon: Twitter, href: "#" },
-                  { icon: Instagram, href: "#" },
-                  { icon: Linkedin, href: "#" },
-                  { icon: Youtube, href: "#" },
-                ].map((social, index) => (
+                {contactData.socialLinks.map((social, index) => (
                   <Link
                     key={index}
                     href={social.href}
                     className="bg-teal-500 hover:bg-teal-300 p-2 rounded-full transition-colors"
                   >
                     <social.icon className="h-5 w-5 text-gray-100" />
-                    <span className="sr-only">{social.icon.name}</span>
+                    <span className="sr-onl">{social.icon.name}</span>
                   </Link>
                 ))}
               </div>
@@ -39,9 +36,10 @@ export default function Footer() {
           <div className="space-y-4 text-white">
             <h3 className="text-xl font-semibold text-teal-200">Get In Touch</h3>
             <div className="space-y-2 text-white text-sm">
-              <p>support@pagedone.com</p>
-              <p>+91 945 658 3256</p>
-              <p>61-A, Elm street, Gujarat, India.</p>
+              <p>{contactData?.email}</p>
+              <p>{formatPhoneNumber(contactData?.phone)}</p>
+              <p>The Kailash Yatra, R-112 </p>
+              <p>East Vinod Nagar, New Delhi-110091, India</p>
             </div>
           </div>
 
@@ -50,14 +48,10 @@ export default function Footer() {
             <h3 className="text-xl font-semibold text-teal-200">Quick Links</h3>
             <div className="grid grid-cols-2 gap-2 text-sm">
               {[
-                { text: "Home", href: "#" },
-                { text: "Careers", href: "#" },
-                { text: "FAQs", href: "#" },
-                { text: "About", href: "#" },
-                { text: "Price Plan", href: "#" },
-                { text: "Contact", href: "#" },
-                { text: "Features", href: "#" },
-                { text: "Products", href: "#" },
+                { text: "Home", href: "/" },
+                { text: "FAQs", href: "#faq" },
+                { text: "Packages", href: "#packages" },
+                { text: "Contact", href: "#contact" },
               ].map((link, index) => (
                 <Link
                   key={index}

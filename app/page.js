@@ -1,101 +1,139 @@
-import Image from "next/image";
+'use client';
+import { Mail, Phone } from 'lucide-react';
+import { contactData, features, headingList, packages } from '@/utils/data';
+import TourPackageCard from '@/components/custom/TravelCard';
+import Footer from '@/components/custom/Footer';
+import Header from '@/components/custom/Header';
+import DialogueButton from '@/components/custom/DialogueButton';
+import FAQ from '@/components/custom/Faq';
+import ChardhamTable from '@/components/custom/ChardhamTable';
+import ContactInfo from '@/components/custom/ContactInfo';
+import { MobileBar } from '@/components/custom/MobileBar';
+import { formatPhoneNumber } from '@/utils/functions';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="bg-gray-100 min-h-screen">
+      <div className="hidden md:block bg-teal-500 text-white text-center py-2 text-sm font-medium">
+        <div className="flex max-w-7xl justify-between mx-auto px-4">
+          <div className="flex gap-2">
+            <div className="flex gap-2 items-center">
+              <Mail className="h-4 w-4" />
+              {contactData?.email} |
+            </div>
+            <div className="flex gap-2 items-center">
+              <Phone className="h-4 w-4" />
+              {formatPhoneNumber(contactData?.phone)}
+            </div>
+          </div>
+          <div>GST No :- 1234567890</div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </div>
+      <Header />
+
+      <section
+        className="bg-gray-900 text-white bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.pexels.com/photos/15031440/pexels-photo-15031440/free-photo-of-a-crowd-standing-in-front-of-the-kedarnath-temple-in-kedarnath-india-during-a-ceremony.jpeg')",
+        }}
+      >
+        <div className="backdrop-brightness-50 mx-auto">
+          <div className="max-w-7xl mx-auto py-16 px-4 flex flex-col md:flex-row items-center justify-center h-[600px]">
+            <div className="text-center mb-8 md:mb-0">
+              <h2 className="text-4xl md:text-7xl font-bold mb-4">{headingList?.heading1?.heading}</h2>
+              {/* <p className="text-2xl mb-8">
+                Tour Packages{' '}
+                <span className="bg-teal-600 text-white p-2 rounded-full">
+                  3N/4D
+                </span>
+              </p> */}
+              <p className="inline-flex gap-2 items-center text-2xl mb-8 bg-teal-500 text-white p-4 rounded-full">
+                {/* Starting from <span className="text-teal-600"> ₹12,499/-</span>{' '}
+                <span className="text-base"> PP</span> */}
+                {headingList?.heading1?.subHeading}
+              </p>
+            </div>
+            {/* <div className="md:w-1/2 rounded-lg">
+              <SubmitQueryForm />
+            </div> */}
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-4 py-12" id="packages">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
+        {headingList?.heading2?.heading}
+        </h2>
+        <p className="text-center text-gray-600 mb-8">
+        {headingList?.heading2?.subHeading}
+        </p>
+        <div className="space-y-8">
+          {packages.map((item, i) => (
+            <TourPackageCard item={item} key={i} />
+          ))}
+        </div>
+      </section>
+
+      <section className="w-full">
+        <div
+          className="relative h-[500px] bg-cover bg-center flex flex-col items-center justify-center text-white p-4 overflow-hidden"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/14208440/pexels-photo-14208440.png')",
+          }}
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+          <h1 className="text-4xl md:text-6xl font-bold text-center mb-8 drop-shadow-lg">
+          {headingList?.heading3?.heading}
+          </h1>
+          <DialogueButton
+            text="CLICK HERE & LET US KNOW YOUR REQUIREMENT"
+            css="bg-teal-500 hover:bg-teal-600 text-white text-lg px-8 py-4 md:py-6 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 text-wrap max-md:py-12"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+
+        <div className="hidden md:block max-w-7xl mx-auto px-4 py-20">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
+              {headingList?.heading4?.heading}
+            </h2>
+            <p className="text-3xl md:text-4xl font-bold text-teal-500">
+            {headingList?.heading4?.subHeading}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="w-20 h-20 rounded-full bg-teal-100 flex items-center justify-center mb-6">
+                  <feature.icon className="w-10 h-10 text-teal-500" />
+                </div>
+                <h3 className="text-xl font-bold text-teal-500 mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <DialogueButton
+              text="CLICK TO CUSTOMIZED KEDARNATH PACKAGES"
+              css="bg-teal-500 hover:bg-teal-600 text-white text-xl px-10 py-8 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105"
+            />
+          </div>
+        </div>
+      </section>
+      <ChardhamTable />
+      <FAQ />
+
+      <ContactInfo />
+
+      <Footer />
+      <MobileBar />
     </div>
   );
 }

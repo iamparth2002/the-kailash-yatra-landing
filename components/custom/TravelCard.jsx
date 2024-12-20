@@ -59,23 +59,7 @@ export default function TourPackageCard({ item }) {
                 </svg>
                 <span className="text-xs mt-1">Transfer</span>
               </div>
-              <div className="flex flex-col items-center opacity-50">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-gray-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
-                  />
-                </svg>
-                <span className="text-xs mt-1">Flights</span>
-              </div>
+              
               <div className="flex flex-col items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +135,7 @@ export default function TourPackageCard({ item }) {
             </div>
             <p className="text-xs text-gray-500">Price Per Adult</p>
           </div>
-          <div className="space-y-2">
+          {/* <div className="space-y-2">
             <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white">
               <Phone className="w-4 h-4 mr-2" />
               {item.phoneNumber}
@@ -168,7 +152,7 @@ export default function TourPackageCard({ item }) {
                 </DialogContent>
               </Dialog>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </Card>
