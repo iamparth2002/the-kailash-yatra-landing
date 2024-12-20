@@ -1,4 +1,5 @@
 import { contactData } from '@/utils/data'
+import { formatPhoneNumber } from '@/utils/functions'
 import { MapPin, Phone, Mail, Twitter, Facebook, Instagram, Linkedin,Youtube } from 'lucide-react'
 import Link from 'next/link'
 
@@ -28,7 +29,7 @@ export default function ContactInfo() {
             <Phone className="w-6 h-6 text-teal-600 mt-1 flex-shrink-0" />
             <div>
               <h3 className="font-semibold text-teal-800 mb-1">Phone Number</h3>
-              <p className="text-gray-600">{contactData.phone}</p>
+              <p className="text-gray-600">{formatPhoneNumber(contactData.phone)}</p>
             </div>
           </div>
 

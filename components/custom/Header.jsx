@@ -28,9 +28,9 @@ const Header = () => {
             aria-label="Toggle navigation menu"
           >
             <div className="w-6 h-4 flex flex-col justify-between">
-              <span className={`w-full h-0.5 bg-gray-800 transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
+              <span className={`w-full h-0.5 bg-gray-800 transition-all duration-300  ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
               <span className={`w-full h-0.5 bg-gray-800 transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`} />
-              <span className={`w-full h-0.5 bg-gray-800 transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+              <span className={`w-full h-0.5 bg-gray-800 transition-all duration-300 mb-[2px] ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
             </div>
           </button>
 

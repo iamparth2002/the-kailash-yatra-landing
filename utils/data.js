@@ -9,7 +9,7 @@ import {
 
 export const  headingList = {
   heading1:{
-    heading:"Embark on the Sacred Journey of a Lifetime!",
+    heading:"Char Dham Yatra Packages",
     subHeading:"Explore Our Exclusive Char Dham Yatra Packages – Comfort, Devotion, and Serenity Combined!"
   },
   heading2:{

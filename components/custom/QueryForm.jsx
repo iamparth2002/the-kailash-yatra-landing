@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -11,18 +12,78 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
+import { contactData } from '@/utils/data';
+import { formatPhoneNumber } from '@/utils/functions';
 import { CheckCircle, Phone, User } from 'lucide-react';
 
 export default function QueryForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    mobile: '',
+    travelDate: '',
+    adults: '',
+    requirement: '',
+  });
+  const [successMessage, setSuccessMessage] = useState('');
+  const [error, setError] = useState('');
+
+  // Handle input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Handle select changes
+  const handleSelectChange = (value) => {
+    setFormData((prev) => ({ ...prev, adults: value }));
+  };
+
+  // Form submission handler
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    setSuccessMessage('');
+
+    // Validate required fields
+    if (!formData.name || !formData.mobile) {
+      setError('Please fill in all required fields.');
+      return;
+    }
+
+    try {
+      // Simulate API call
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSuccessMessage('Your query has been sent successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          mobile: '',
+          travelDate: '',
+          adults: '',
+          requirement: '',
+        });
+      } else {
+        throw new Error('Something went wrong. Please try again later.');
+      }
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   return (
     <Card className="w-full max-w-5xl mx-auto border-0 shadow-none">
       <CardContent className="p-6">
         <div className="grid lg:grid-cols-2 gap-6">
           {/* How It Works Section */}
           <div className="hidden md:block space-y-6">
-            <h2 className="text-2xl font-semibold text-teal-600">
-              How It Works
-            </h2>
+            <h2 className="text-2xl font-semibold text-teal-600">How It Works</h2>
             <div className="space-y-4">
               {[
                 'Tell us details of your holiday plan.',
@@ -44,7 +105,7 @@ export default function QueryForm() {
                 { icon: User, title: '10k+', subtitle: 'Happy Clients' },
                 {
                   icon: CheckCircle,
-                  title: 'Reena Holidays',
+                  title: 'The Kailash Yatra',
                   subtitle: 'Verified',
                 },
                 {
@@ -65,22 +126,46 @@ export default function QueryForm() {
 
             <div className="flex items-center gap-2 bg-teal-100 text-teal-600 p-3 rounded-md">
               <Phone className="w-5 h-5" />
-              <span className="text-xl font-semibold">+91 9999 233 932</span>
+              <span className="text-xl font-semibold">
+                {formatPhoneNumber(contactData?.phone)}
+              </span>
             </div>
           </div>
 
           {/* Quick Enquiry Form */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-semibold text-gray-800">
-              QUICK ENQUIRY
-            </h2>
-            <div className="space-y-4">
-              <Input placeholder="Name*" />
-              <Input type="email" placeholder="Email Id" />
-              <Input placeholder="Mobile No.*" />
+            <h2 className="text-2xl font-semibold text-gray-800">QUICK ENQUIRY</h2>
+            {error && <p className="text-sm text-red-600">{error}</p>}
+            {successMessage && <p className="text-sm text-green-600">{successMessage}</p>}
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <Input
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Name*"
+              />
+              <Input
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                type="email"
+                placeholder="Email Id"
+              />
+              <Input
+                name="mobile"
+                value={formData.mobile}
+                onChange={handleChange}
+                placeholder="Mobile No.*"
+              />
               <div className="grid grid-cols-2 gap-4">
-                <Input type="date" placeholder="Travel Date" />
-                <Select>
+                <Input
+                  name="travelDate"
+                  value={formData.travelDate}
+                  onChange={handleChange}
+                  type="date"
+                  placeholder="Travel Date"
+                />
+                <Select onValueChange={handleSelectChange}>
                   <SelectTrigger>
                     <SelectValue placeholder="No. of Adults" />
                   </SelectTrigger>
@@ -93,21 +178,28 @@ export default function QueryForm() {
                   </SelectContent>
                 </Select>
               </div>
-              <Textarea placeholder="Requirement" className="min-h-[100px]" />
+              <Textarea
+                name="requirement"
+                value={formData.requirement}
+                onChange={handleChange}
+                placeholder="Requirement"
+                className="min-h-[100px]"
+              />
               <Button
+                type="submit"
                 className="w-full bg-teal-600 hover:bg-teal-700 text-white"
                 size="lg"
               >
                 Send Enquiry
               </Button>
               <p className="text-xs text-center text-gray-600">
-                By clicking submit query i accept the{' '}
+                By clicking submit query I accept the{' '}
                 <a href="#" className="text-teal-600 hover:underline">
                   privacy policy
                 </a>
                 .
               </p>
-            </div>
+            </form>
           </div>
         </div>
       </CardContent>

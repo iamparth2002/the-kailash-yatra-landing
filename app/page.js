@@ -10,6 +10,10 @@ import ChardhamTable from '@/components/custom/ChardhamTable';
 import ContactInfo from '@/components/custom/ContactInfo';
 import { MobileBar } from '@/components/custom/MobileBar';
 import { formatPhoneNumber } from '@/utils/functions';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
+import { Button } from '@/components/ui/button';
+import QueryForm from '@/components/custom/QueryForm';
+
 
 export default function Home() {
   return (
@@ -32,41 +36,47 @@ export default function Home() {
       <Header />
 
       <section
-        className="bg-gray-900 text-white bg-cover bg-center"
+        className="bg-gray-900 text-white bg-cover bg-center relative"
         style={{
           backgroundImage:
             "url('https://images.pexels.com/photos/15031440/pexels-photo-15031440/free-photo-of-a-crowd-standing-in-front-of-the-kedarnath-temple-in-kedarnath-india-during-a-ceremony.jpeg')",
         }}
       >
-        <div className="backdrop-brightness-50 mx-auto">
+        {/* Overlay to darken and blur the image */}
+        <div
+          className="absolute inset-0 bg-black bg-opacity-20"
+          style={{ filter: 'blur(4px)' }}
+        ></div>
+
+        <div className="relative backdrop-brightness-50 mx-auto">
           <div className="max-w-7xl mx-auto py-16 px-4 flex flex-col md:flex-row items-center justify-center h-[600px]">
             <div className="text-center mb-8 md:mb-0">
-              <h2 className="text-4xl md:text-7xl font-bold mb-4">{headingList?.heading1?.heading}</h2>
-              {/* <p className="text-2xl mb-8">
-                Tour Packages{' '}
-                <span className="bg-teal-600 text-white p-2 rounded-full">
-                  3N/4D
-                </span>
-              </p> */}
-              <p className="inline-flex gap-2 items-center text-2xl mb-8 bg-teal-500 text-white p-4 rounded-full">
-                {/* Starting from <span className="text-teal-600"> ₹12,499/-</span>{' '}
-                <span className="text-base"> PP</span> */}
+              <h2 className="text-4xl md:text-7xl font-bold">
+                {headingList?.heading1?.heading}
+              </h2>
+
+              <p className="gap-2  items-center max-md:text-xl text-2xl mb-8  text-white p-4 rounded-full">
                 {headingList?.heading1?.subHeading}
               </p>
+              <Dialog>
+              <DialogTrigger asChild>
+                <Button className="bg-teal-500 hover:bg-teal-600 text-3xl p-6 rounded-full">Book Now</Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-5xl">
+                <QueryForm />
+              </DialogContent>
+            </Dialog>
             </div>
-            {/* <div className="md:w-1/2 rounded-lg">
-              <SubmitQueryForm />
-            </div> */}
           </div>
         </div>
       </section>
 
       <section className="max-w-7xl mx-auto px-4 py-12" id="packages">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-        {headingList?.heading2?.heading}
+          {headingList?.heading2?.heading}
         </h2>
         <p className="text-center text-gray-600 mb-8">
-        {headingList?.heading2?.subHeading}
+          {headingList?.heading2?.subHeading}
         </p>
         <div className="space-y-8">
           {packages.map((item, i) => (
@@ -84,7 +94,7 @@ export default function Home() {
           }}
         >
           <h1 className="text-4xl md:text-6xl font-bold text-center mb-8 drop-shadow-lg">
-          {headingList?.heading3?.heading}
+            {headingList?.heading3?.heading}
           </h1>
           <DialogueButton
             text="CLICK HERE & LET US KNOW YOUR REQUIREMENT"
@@ -98,7 +108,7 @@ export default function Home() {
               {headingList?.heading4?.heading}
             </h2>
             <p className="text-3xl md:text-4xl font-bold text-teal-500">
-            {headingList?.heading4?.subHeading}
+              {headingList?.heading4?.subHeading}
             </p>
           </div>
 
