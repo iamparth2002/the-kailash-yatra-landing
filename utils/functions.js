@@ -1,7 +1,7 @@
 import { contactData } from "./data";
 
 export const handleSupportClick = () => {
-    window.open(`tel:+${contactData.phone}`, "_self"); // Directly dials the support number
+    window.open(`tel:+${contactData.phone}`, "_self");
   };
   
   export const handleEmailClick = () => {

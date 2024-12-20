@@ -16,8 +16,8 @@ import { handleSupportClick, handleWhatsAppClick } from '@/utils/functions'
 export function MobileBar() {
   return (
     <div className="fixed shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_-2px_4px_-1px_rgba(0,0,0,0.06)] bottom-0 left-0 right-0 z-50 flex gap-2 h-20 items-center justify-between bg-white px-4 text-white md:hidden">
-      <Button aria-label="Contact Phone" variant="ghost" size="icon" className="text-teal-500 border-2 border-teal-500 hover:text-teal-500">
-        <Phone className="h-5 w-5" onClick={handleSupportClick} fill='teal'/>
+      <Button aria-label="Contact Phone" variant="ghost" size="icon" className="text-teal-500 border-2 border-teal-500 hover:text-teal-500" onClick={handleSupportClick}>
+        <Phone className="h-5 w-5"  fill='teal'/>
       </Button>
       <Dialog>
         <DialogTrigger asChild>
