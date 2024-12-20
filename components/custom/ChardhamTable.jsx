@@ -12,7 +12,7 @@ import { Clock, MapPin, Mountain } from 'lucide-react'
 
 export default function ChardhamTable() {
     return (
-        <div className="w-full max-w-7xl mx-auto py-16 max-md:px-6">
+        <div className="w-full max-w-7xl mx-auto py-16 px-4">
             <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-bold text-[#0a1435] mb-4 tracking-tight">
                     {headingList?.heading5.heading}
