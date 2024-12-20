@@ -153,7 +153,7 @@ export const contactData = {
   address: "The Kailash Yatra, R-112, East Vinod Nagar, New Delhi-110091, India.",
   phone: "919958647371",
   email: "thekailashyatra@gmail.com",
-  mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1645541868古",
+  mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.215293719925!2d77.30703277495645!3d28.62330888450035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd176121bb5f%3A0x25e8d105afdce13a!2sShrine%20Yatra%20-%20Best%20Travel%20Agency%20in%20Delhi!5e0!3m2!1sen!2sin!4v1734678134775!5m2!1sen!2sin",
   socialLinks: [
     { icon: Twitter, href: 'https://twitter.com/ShrineYatra' },
     { icon: Instagram, href: 'https://www.instagram.com/shrineyatra/' },

@@ -23,14 +23,15 @@ export default function Home() {
           <div className="flex gap-2">
             <div className="flex gap-2 items-center">
               <Mail className="h-4 w-4" />
-              {contactData?.email} |
+              {contactData?.email}
             </div>
+            
+          </div>
             <div className="flex gap-2 items-center">
               <Phone className="h-4 w-4" />
               {formatPhoneNumber(contactData?.phone)}
             </div>
-          </div>
-          <div>GST No :- 1234567890</div>
+          {/* <div>GST No :- 1234567890</div> */}
         </div>
       </div>
       <Header />
@@ -131,7 +132,7 @@ export default function Home() {
 
           <div className="text-center">
             <DialogueButton
-              text="CLICK TO CUSTOMIZED KEDARNATH PACKAGES"
+              text="CLICK TO CUSTOMIZED PACKAGES"
               css="bg-teal-500 hover:bg-teal-600 text-white text-xl px-10 py-8 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105"
             />
           </div>
